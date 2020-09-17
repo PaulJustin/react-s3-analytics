@@ -1,0 +1,37 @@
+{
+  "name": "xyrjhb--run",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@antv/g6": "3.7.1",
+    "@antv/g2": "4.0.15",
+    "@antv/data-set": "0.11.6",
+    "antd": "4.6.3",
+    "axios": "^0.20.0",
+    "insert-css": "2.0.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router-dom": "5.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

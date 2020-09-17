@@ -1,0 +1,71 @@
+<h2>NeelPay States</h2>
+
+<script type="text/javascript" src="./index.js"></script>
+
+<h4>
+<label for="hfc">Choose a category: </label>
+<select id="hfc" name="hfc_category" >
+  <option value="all">Show All</option>
+  <option value="broadband">Broadband</option>
+  <option value="electricity">Electricity</option>
+  <option value="water">Water</option>
+  <option value="lpg">LPG</option>
+  <option value="dth">DTH</option>
+</select> 
+</h4>
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+<script>
+$(function() {
+  $('input[name="daterange"]').daterangepicker({
+    opens: 'left'
+  }, function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  });
+});
+</script>
+
+<h4>
+<label for="timestamp">Choose date range:</label>
+<input type="text" id="timestamp" name="datetimes" size="33"/>
+</h4>
+
+<script>
+$(function() {
+  $('input[name="datetimes"]').daterangepicker({
+    timePicker: true,
+    startDate: moment().startOf('hour'),
+    endDate: moment().startOf('hour').add(32, 'hour'),
+    locale: {
+      format: 'MM/DD/YY hh:mm A'
+    },
+    function(start, end, label) {
+    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+  }
+  });
+});
+</script>
+
+<div>
+  <button id="graphButton" class="button" style="vertical-align:middle"><span>Show state machine</span></button>
+  <button id="chartButton" class="button" style="float: right;"><span>Back to summary</span></button>
+  <button id="showTableButton" class="button" style="float: right;"><span>Show table</span></button>
+</div>
+<div class="disp"/>
+
+<div id="container"> </div>
+<table id="charts" table cellspacing="0" cellpadding="0" style="border: none">
+  <tr>
+    <td width="950"><div id="utteranceChart"></div></td>
+    <td width="950"><div id="deviceChart"> </div></td>
+  </tr>
+  <tr>
+    <td width="950"><div id="billersChart"> </div></td>
+    <td width="950"><div id="mostUsedChart"></div></td>
+  </tr>
+</table>
